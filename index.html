@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="slider()">
+    <div class="banner">
+        <div class="slider">
+            <img src="images/img1.jpg" id="slideImg">
+        </div>
+        <div class="overlay">
+            <div class="navbar">
+                <div class="logo">
+                    <img src="images/logo.png" onClick="window.location.href='https://filip-shkolik.github.io/portfol/'">
+                </div>
+                <div class="menu-icons">
+                    <img src="images/left-arrow.png" class="arrow" onClick="window.location.href='https://filip-shkolik.github.io/portfol/'">
+                    <img src="images/user.png" class="user" onClick="window.location.href='https://github.com/filip-shkolik'">
+                </div>
+            </div>
+
+            <div class="content">
+                <h1>MY DESIGN MAIN PAGE 🤩</h1>
+                <h3>Here you will see the design of the websites home pages 👨‍💻</h3>
+                <div>
+                    <button onClick="window.location.href='https://github.com/filip-shkolik'">WATCH MORE</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        let sideImg = document.getElementById("slideImg");
+
+        let images = new Array(
+            "images/preview1.png",
+            "images/preview2.png",
+            "images/preview3.png",
+            "images/preview4.png",
+            "images/preview5.png",
+            "images/preview6.png",
+            "images/preview7.png",
+            "images/preview8.png",
+        );
+
+        let len = images.length;
+        let i = 0;
+
+        function slider(){
+            if (i > len-1){
+                i = 0;
+            }
+            slideImg.src = images[i];
+            i++;
+            setTimeout('slider()', 3000);
+        }
+    </script>
+</body>
+</html>
